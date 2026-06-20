@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aeon 이온심리상담센터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EF;
+    --warm-white: #FDFCFA;
+    --wood: #8B6347;
+    --wood-light: #C4A882;
+    --charcoal: #2C2C2C;
+    --mid: #6B6B6B;
+    --light: #A8A8A8;
+    --divider: #E8E2D9;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(253,252,250,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-symbol {
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+
+  .logo-symbol svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--charcoal);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--wood); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid var(--divider);
+    opacity: 0.6;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 40px; right: 40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid var(--divider);
+    opacity: 0.4;
+  }
+
+  .hero-inner {
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--wood);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    word-break: keep-all;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--wood);
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 2;
+    margin-bottom: 48px;
+    word-break: keep-all;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--wood);
+    color: white;
+    padding: 16px 32px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .hero-cta:hover { background: #7a5538; }
+
+  .hero-cta-arrow {
+    font-size: 16px;
+    transition: transform 0.2s;
+  }
+
+  .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 100px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--wood-light);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+    word-break: keep-all;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--wood-light);
+    margin: 24px 0 40px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--warm-white);
+    max-width: 100%;
+    padding: 100px 48px;
+  }
+
+  .about-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 2.2;
+    word-break: keep-all;
+    max-width: 640px;
+  }
+
+  .about-text strong {
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  /* ── COUNSELING ── */
+  #counseling {
+    background: var(--cream);
+    max-width: 100%;
+    padding: 100px 48px;
+  }
+
+  .counseling-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--divider);
+    border: 1px solid var(--divider);
+    margin-top: 40px;
+  }
+
+  .program-card {
+    background: var(--cream);
+    padding: 36px 32px;
+  }
+
+  .program-icon {
+    width: 32px;
+    height: 2px;
+    background: var(--wood-light);
+    margin-bottom: 20px;
+  }
+
+  .program-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+
+  .program-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+
+  /* ── DIRECTOR ── */
+  #director {
+    background: var(--charcoal);
+    max-width: 100%;
+    padding: 100px 48px;
+    color: white;
+  }
+
+  .director-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .director-inner .section-label { color: var(--wood-light); }
+
+  .director-inner .section-title { color: white; }
+
+  .director-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .director-bio {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 2.1;
+    word-break: keep-all;
+    margin-bottom: 32px;
+  }
+
+  .director-name {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .director-title-text {
+    font-size: 13px;
+    color: var(--wood-light);
+    letter-spacing: 0.1em;
+  }
+
+  .credentials {
+    list-style: none;
+  }
+
+  .cred-group {
+    margin-bottom: 32px;
+  }
+
+  .cred-group-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--wood-light);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+
+  .cred-item {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    word-break: keep-all;
+  }
+
+  .cred-item:last-child { border-bottom: none; }
+
+  .media-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .media-tag {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--warm-white);
+    max-width: 100%;
+    padding: 100px 48px;
+  }
+
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-info-item {
+    margin-bottom: 32px;
+  }
+
+  .contact-info-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--wood-light);
+    margin-bottom: 8px;
+  }
+
+  .contact-info-value {
+    font-size: 14px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  .kakao-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #FEE500;
+    color: #3A1D1D;
+    padding: 16px 28px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+  }
+
+  .kakao-btn:hover { opacity: 0.85; }
+
+  .map-placeholder {
+    background: var(--cream);
+    border: 1px solid var(--divider);
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--light);
+    font-size: 13px;
+  }
+
+  .map-icon {
+    font-size: 28px;
+    opacity: 0.4;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 40px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .footer-info {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    line-height: 2;
+  }
+
+  /* ── COLUMN ── */
+  #column {
+    background: var(--cream);
+    max-width: 100%;
+    padding: 100px 48px;
+  }
+
+  .column-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .column-card {
+    border-top: 1px solid var(--divider);
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .column-card:hover { opacity: 0.65; }
+
+  .column-card:last-child { border-bottom: 1px solid var(--divider); }
+
+  .column-meta {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--wood-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .column-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--charcoal);
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  .column-arrow {
+    color: var(--wood-light);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 720px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 64px; }
+    section, #about, #counseling, #director, #contact, footer { padding-left: 24px; padding-right: 24px; }
+    .director-layout, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero::before, .hero::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo.png" alt="이온심리상담센터 로고" style="height:36px; width:auto;">
+    <span class="nav-name">이온심리상담센터</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">센터 소개</a></li>
+    <li><a href="#counseling">상담 안내</a></li>
+    <li><a href="#director">센터장</a></li>
+    <li><a href="#column">칼럼</a></li>
+    <li><a href="#contact">상담 신청</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Aeon Counseling Center</p>
+    <h1 class="hero-title">
+      아이를 둘러싼<br>
+      <em>모든 어른</em>을 위한<br>
+      심리상담센터
+    </h1>
+    <p class="hero-sub">
+      부모, 교사, 양육자 — 아이 곁의 어른이 단단해질 때 아이도 변합니다.<br>
+      서울대학교 교육학 박사가 직접 상담합니다.
+    </p>
+    <a href="http://pf.kakao.com/_gxdkEX/chat" target="_blank" class="hero-cta">
+      카카오톡으로 상담 문의하기
+      <span class="hero-cta-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">이롭고 따뜻한 상담을 드립니다</h2>
+    <div class="divider"></div>
+    <p class="about-text">
+      이온(利溫)은 <strong>이롭고 따뜻하다</strong>는 뜻입니다.<br><br>
+      아이의 어려움은 아이 혼자의 문제가 아닙니다.
+      부모의 양육 방식, 교사와의 관계, 가정 안의 상호작용이 함께 작용합니다.
+      이온심리상담센터는 <strong>아이를 둘러싼 어른 — 부모, 교사, 양육자</strong>와 함께 일합니다.<br><br>
+      아동·청소년 상담부터 부모 상담, 교사 소진, 성인 심리상담까지.
+      20여 년의 연구와 현장 경험을 바탕으로, 깊이 있고 실질적인 상담을 드립니다.
+    </p>
+  </div>
+</div>
+
+<!-- COUNSELING -->
+<div id="counseling">
+  <div class="counseling-inner">
+    <p class="section-label">Counseling</p>
+    <h2 class="section-title">상담 분야</h2>
+    <div class="program-grid">
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">아동·청소년 상담</h3>
+        <p class="program-desc">ADHD·집중력·경계선 지능, 학습·시험불안, 영재 아동, 또래관계·학교적응, 사춘기·진로 고민</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">부모 상담</h3>
+        <p class="program-desc">양육 방식 점검, 사춘기 자녀와의 갈등, 훈육 방식, 부모-자녀 관계 개선, 부부 상담</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">성인·교사 상담</h3>
+        <p class="program-desc">교사·간호사 소진 및 자기 돌봄, 직장 스트레스, 관계 어려움, 성인 심리 상담</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">특강·연수</h3>
+        <p class="program-desc">교육청·학교 교사 연수, 학부모 특강, ADHD·경계선 지능·자기주도학습·집중력·진로 주제</p>
+      </div>
+    </div>
+    <p style="margin-top: 24px; font-size: 13px; color: var(--light);">
+      모든 상담은 예약제로 운영됩니다. 카카오톡 채널로 문의 주시면 안내드립니다.
+    </p>
+  </div>
+</div>
+
+<!-- DIRECTOR -->
+<div id="director">
+  <div class="director-inner">
+    <p class="section-label">Director</p>
+    <h2 class="section-title">센터장 소개</h2>
+    <div class="director-layout">
+      <div>
+        <p class="director-name">조아라</p>
+        <p class="director-title-text">센터장 · 서울대학교 교육학 박사</p>
+        <div class="divider" style="background: rgba(255,255,255,0.15); margin-top: 20px;"></div>
+        <p class="director-bio">
+          오랜 시간 상담을 해오며 버리지 않는 철칙이 한 가지 있습니다.<br><br>
+          사람은 누구나 삶에서 한 번은 잘 살아보고 싶어지는 때가 온다는 것입니다.<br>
+          아이도, 부모도, 교사도, 어른도.<br>
+          그 순간에 혼자가 아니길 바라는 마음으로 이 공간을 열었습니다.<br><br>
+          사랑하지 않아서 잘 못하는 게 아닙니다.<br>
+          방법을 몰라서일 때가 더 많습니다.
+        </p>
+        <div style="margin-top: 24px;">
+          <p class="cred-group-label" style="margin-bottom: 10px;">언론 보도</p>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 6px; line-height: 1.8; font-style: italic;">"딴생각을 억제하려 할수록 오히려 더 늘어난다"</p>
+          <p style="font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 14px; line-height: 1.7;">「학습 중 딴생각」 관련 연구 YTN 사이언스 및 주요 언론 보도 (2017)</p>
+          <div class="media-tags">
+            <span class="media-tag">YTN 사이언스</span>
+            <span class="media-tag">조선일보</span>
+            <span class="media-tag">연합뉴스</span>
+            <span class="media-tag">서울신문</span>
+            <span class="media-tag">조선에듀</span>
+            <span class="media-tag">MBC 다큐 「두뇌음식」</span>
+            <span class="media-tag">EBS 다큐프라임 「상상력」</span>
+            <span class="media-tag">KBS 과학카페 「최면」</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul class="credentials">
+          <li class="cred-group">
+            <p class="cred-group-label">학위 및 자격</p>
+            <p class="cred-item">서울대학교 교육학과 교육상담전공 박사</p>
+            <p class="cred-item">서울대학교 교육학과 교육상담전공 석사</p>
+            <p class="cred-item">여성가족부 청소년상담사 1급</p>
+            <p class="cred-item">한국상담학회 전문상담사 2급</p>
+            <p class="cred-item">DBT Foundation 수료</p>
+          </li>
+          <li class="cred-group">
+            <p class="cred-group-label">현재</p>
+            <p class="cred-item">서울교육대학교 · 경인교육대학교 · 한국방송통신대학교 출강</p>
+            <p class="cred-item">차의과대학교 임상상담심리대학원 출강</p>
+            <p class="cred-item">병원간호사회 감정소진·자기돌봄 연수 전문가</p>
+            <p class="cred-item">한국청소년상담복지개발원 청소년상담사 자격연수 전문강사</p>
+          </li>
+          <li class="cred-group">
+            <p class="cred-group-label">주요 경력</p>
+            <p class="cred-item">교육인적자원부·서울대학교 대학생 멘토링 사업 수퍼바이저 팀장</p>
+            <p class="cred-item">명지대학교 교육대학원 객원조교수</p>
+            <p class="cred-item">서울사이버대학교 객원교수</p>
+            <p class="cred-item">분당서울대병원 스트레스 관리 프로그램 설계·코칭</p>
+            <p class="cred-item">SK이노베이션 직장인 전문위촉상담가</p>
+            <p class="cred-item">차세대영재기업인 전문위촉상담가</p>
+            <p class="cred-item">서울대학교 과학영재교육원 영재교육전문가</p>
+            <p class="cred-item">보건복지부 직장인 정신건강 증진 프로그램 개발</p>
+          </li>
+          <li class="cred-group">
+            <p class="cred-group-label">특강·연수</p>
+            <p class="cred-item">서울·경기·인천 교육청 및 학교 교사 대상 학습·진로상담 연수 다수</p>
+            <p class="cred-item">용인시·의정부교육청 신임교사 연수</p>
+            <p class="cred-item">서울시교육청 산하 초·중등 학부모 특강 다수</p>
+            <p class="cred-item">서울대·조선대·가천대·대구과학기술대 외 다수 대학 특강</p>
+            <p class="cred-item">ADHD·경계선지능·영재·자기주도학습·집중력·사춘기 자녀 주제</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COLUMN -->
+<div id="column">
+  <div class="column-inner">
+    <p class="section-label">Column</p>
+    <h2 class="section-title">한국교육신문 칼럼 연재 중</h2>
+    <div class="divider"></div>
+    <p style="font-size: 14px; color: var(--mid); margin-bottom: 36px; line-height: 1.8; word-break: keep-all;">
+      교사, 부모, 아이를 둘러싼 관계와 심리에 대해 매달 칼럼을 연재하고 있습니다.
+    </p>
+    <a href="https://www.hangyo.com/mobile/article.html?no=107896" target="_blank" class="column-card">
+      <div>
+        <p class="column-meta">한국교육신문 · 공감 치유 지상상담소 ⑭ · 2026.06</p>
+        <p class="column-title">저연차 교사의 삶, 눈치보다 지치겠어요!</p>
+      </div>
+      <span class="column-arrow">→</span>
+    </a>
+    <p style="margin-top: 24px; font-size: 12px; color: var(--light);">
+      * 칼럼은 매월 업데이트됩니다
+    </p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">상담 신청 및 오시는 길</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">상담 문의</p>
+          <p class="contact-info-value">카카오톡 채널 또는 문자로 문의해 주세요.<br>상담 요청 내용을 남겨주시면<br>순차적으로 안내드립니다.</p>
+          <a href="http://pf.kakao.com/_gxdkEX/chat" target="_blank" class="kakao-btn" style="margin-bottom:12px; display:inline-flex;">
+            💬 카카오톡으로 문의하기
+          </a><br>
+          <a href="sms:01072701008" class="kakao-btn" style="background:#2C2C2C; color:white; margin-top:4px; display:inline-flex;">
+            📱 문자로 문의하기 &nbsp;<span style="opacity:0.6; font-size:12px;">010-7270-1008</span>
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">운영 안내</p>
+          <p class="contact-info-value">모든 상담은 예약제로 운영됩니다</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">위치</p>
+          <p class="contact-info-value">
+            서울시 관악구 남부순환로 1808<br>
+            관악센추리타워 709호
+          </p>
+        </div>
+        <div class="map-placeholder">
+          <span class="map-icon">📍</span>
+          <span>관악센추리타워 709호</span>
+          <span style="font-size: 12px;">남부순환로 1808</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">이온심리상담센터</p>
+  <p class="footer-info">
+    서울시 관악구 남부순환로 1808, 관악센추리타워 709호<br>
+    카카오톡 @이온심리상담센터 &nbsp;·&nbsp; 문자 010-7270-1008
+  </p>
+</footer>
+
+</body>
+</html>
