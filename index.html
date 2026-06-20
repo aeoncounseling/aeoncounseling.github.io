@@ -475,53 +475,89 @@
 
   /* ── COLUMN ── */
   #column {
-    background: var(--cream);
+    background: var(--charcoal);
     max-width: 100%;
     padding: 100px 48px;
   }
+
+  #column .section-label { color: var(--wood-light); }
+  #column .section-title { color: white; }
+  #column > .column-inner > p { color: rgba(255,255,255,0.55) !important; }
 
   .column-inner {
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .column-card {
-    border-top: 1px solid var(--divider);
-    padding: 28px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-    text-decoration: none;
-    transition: opacity 0.2s;
+  .column-list {
+    display: grid;
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 8px;
   }
 
-  .column-card:hover { opacity: 0.65; }
+  .column-card {
+    background: var(--charcoal);
+    padding: 26px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
 
-  .column-card:last-child { border-bottom: 1px solid var(--divider); }
+  .column-card:hover { background: #383838; }
+
+  .column-card.featured {
+    background: #3a2e22;
+    border-left: 3px solid var(--wood-light);
+    padding-left: 25px;
+  }
+
+  .column-card.featured:hover { background: #463725; }
 
   .column-meta {
     font-size: 11px;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     color: var(--wood-light);
     margin-bottom: 8px;
-    text-transform: uppercase;
   }
 
   .column-title {
     font-family: var(--serif);
-    font-size: 15px;
-    color: var(--charcoal);
+    font-size: 16px;
+    color: white;
     line-height: 1.6;
     word-break: keep-all;
+  }
+
+  .column-card:not(.featured) .column-title {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
   }
 
   .column-arrow {
     color: var(--wood-light);
     font-size: 18px;
     flex-shrink: 0;
-    margin-top: 4px;
   }
+
+  .column-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .column-more:hover { color: white; border-color: white; }
 
   /* ── MOBILE ── */
   @media (max-width: 720px) {
@@ -701,21 +737,64 @@
 <div id="column">
   <div class="column-inner">
     <p class="section-label">Column</p>
-    <h2 class="section-title">한국교육신문 칼럼 연재 중</h2>
-    <div class="divider"></div>
-    <p style="font-size: 14px; color: var(--mid); margin-bottom: 36px; line-height: 1.8; word-break: keep-all;">
+    <h2 class="section-title">한국교육신문 「공감 치유 지상상담소」 연재 중</h2>
+    <p style="font-size: 14px; margin-bottom: 36px; line-height: 1.8; word-break: keep-all;">
       교사, 부모, 아이를 둘러싼 관계와 심리에 대해 매달 칼럼을 연재하고 있습니다.
     </p>
-    <a href="https://www.hangyo.com/mobile/article.html?no=107896" target="_blank" class="column-card">
-      <div>
-        <p class="column-meta">한국교육신문 · 공감 치유 지상상담소 ⑭ · 2026.06</p>
-        <p class="column-title">저연차 교사의 삶, 눈치보다 지치겠어요!</p>
-      </div>
-      <span class="column-arrow">→</span>
+    <div class="column-list">
+      <a href="https://hangyo.com/news/article.html?no=107896" target="_blank" class="column-card featured">
+        <div>
+          <p class="column-meta">⑭ · 2026.06.04</p>
+          <p class="column-title">저연차 교사의 삶, 눈치보다 지치겠어요!</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=107531" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑬ · 2026.04.30</p>
+          <p class="column-title">한 배를 탄 아이들과의 동행, 문제아는 어떡하죠?</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=107276" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑫ · 2026.04.03</p>
+          <p class="column-title">8년간 저학년만 맡았는데, 6학년은 버겁네요</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=106412" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑪ · 2026.01.22</p>
+          <p class="column-title">배움이 느린 학생의 모둠 활동, 소외될까 걱정돼요</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=106075" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑩ · 2025.12.11</p>
+          <p class="column-title">교사의 지도 방식을 탓하는 학생, 공감이 안 돼요</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=105817" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑨ · 2025.11.13</p>
+          <p class="column-title">아이들의 갈등, 중재하기 너무 힘드네요</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=105558" target="_blank" class="column-card">
+        <div>
+          <p class="column-meta">⑧ · 2025.10.17</p>
+          <p class="column-title">학기 중간에 맡게 된 교실, 너무 어렵네요</p>
+        </div>
+        <span class="column-arrow">→</span>
+      </a>
+    </div>
+    <a href="https://hangyo.com/news/search_result.html?search=지상상담소" target="_blank" class="column-more">
+      한국교육신문에서 더 보기 (전체 13건) →
     </a>
-    <p style="margin-top: 24px; font-size: 12px; color: var(--light);">
-      * 칼럼은 매월 업데이트됩니다
-    </p>
   </div>
 </div>
 
