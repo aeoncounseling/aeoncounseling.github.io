@@ -364,6 +364,32 @@
 
   .cred-item:last-child { border-bottom: none; }
 
+  .cred-item.cred-summary {
+    line-height: 1.75;
+    padding: 10px 0;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .cred-summary-lead {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.9;
+    margin-bottom: 18px;
+    word-break: keep-all;
+    font-style: italic;
+  }
+
+  .cred-section-head {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--wood-light);
+    margin-top: 20px;
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+
+
+
   .media-tags {
     display: flex;
     flex-wrap: wrap;
@@ -643,17 +669,22 @@
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">부부/커플 상담</h3>
-        <p class="program-desc">갈등 패턴 점검, 상호이해, 소통 방식 개선, 신뢰 회복, 양육관 조율, 관계 만족도 향상</p>
+        <p class="program-desc">갈등 패턴 점검, 소통 방식 개선, 신뢰 회복, 양육관 조율, 관계 만족도 향상</p>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">성인·교사 상담</h3>
-        <p class="program-desc">교사·간호사 소진 및 자기 돌봄, 직장 스트레스, 관계 어려움, 성인 심리 상담</p>
+        <p class="program-desc">직장 스트레스, 관계 어려움, 성인 심리 상담</p>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">특강·연수</h3>
-        <p class="program-desc">교육청·학교 교사 연수, 학부모 특강, ADHD·경계선 지능·자기주도학습·집중력·진로 주제</p>
+        <p class="program-desc">교육청·학교 교사 연수, 학부모 특강, ADHD·경계선 지능·자기주도학습·집중력·진로, 교사·간호사 소진 및 자기돌봄 주제</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">심리검사</h3>
+        <p class="program-desc">지능검사(K-WISC·K-WAIS), 성격검사(MBTI·TCI·성격5요인), MMPI, 학습유형·진로탐색 — 검사 후 해석 상담 포함</p>
       </div>
     </div>
     <p style="margin-top: 24px; font-size: 13px; color: var(--light);">
@@ -698,6 +729,7 @@
       </div>
       <div>
         <ul class="credentials">
+
           <li class="cred-group">
             <p class="cred-group-label">학위 및 자격</p>
             <p class="cred-item">서울대학교 교육학과 교육상담전공 박사</p>
@@ -706,32 +738,113 @@
             <p class="cred-item">한국상담학회 전문상담사 2급</p>
             <p class="cred-item">DBT Foundation 수료</p>
           </li>
+
           <li class="cred-group">
-            <p class="cred-group-label">현재</p>
-            <p class="cred-item">서울교육대학교 · 경인교육대학교 · 한국방송통신대학교 출강</p>
-            <p class="cred-item">차의과대학교 임상상담심리대학원 출강</p>
-            <p class="cred-item">병원간호사회 감정소진·자기돌봄 연수 전문가</p>
-            <p class="cred-item">한국청소년상담복지개발원 청소년상담사 자격연수 전문강사</p>
+            <p class="cred-group-label">現) 현재 활동</p>
+            <p class="cred-item">現) 서울교육대학교 · 경인교육대학교 출강</p>
+            <p class="cred-item">現) 한국방송통신대학교 청소년교육과 출강</p>
+            <p class="cred-item">現) 한국방송통신대학교 KNOU PASS 프라임칼리지 교수</p>
+            <p class="cred-item">現) 차의과대학교 임상상담심리대학원 출강</p>
+            <p class="cred-item">現) 병원간호사회 감정소진·자기돌봄 연수</p>
+            <p class="cred-item">現) 한국청소년상담복지개발원 청소년상담사 자격연수 강사</p>
+            <p class="cred-item">現) 인천시교육청 교원치유상담사</p>
           </li>
+
           <li class="cred-group">
-            <p class="cred-group-label">주요 경력</p>
-            <p class="cred-item">교육인적자원부·서울대학교 대학생 멘토링 사업 수퍼바이저 팀장</p>
-            <p class="cred-item">명지대학교 교육대학원 객원조교수</p>
-            <p class="cred-item">서울사이버대학교 객원교수</p>
-            <p class="cred-item">분당서울대병원 스트레스 관리 프로그램 설계·코칭</p>
-            <p class="cred-item">SK이노베이션 직장인 전문위촉상담가</p>
-            <p class="cred-item">차세대영재기업인 전문위촉상담가</p>
-            <p class="cred-item">서울대학교 과학영재교육원 영재교육전문가</p>
-            <p class="cred-item">보건복지부 직장인 정신건강 증진 프로그램 개발</p>
+            <p class="cred-group-label">前) 주요 경력</p>
+            <p class="cred-item">前) 교육인적자원부·서울대학교 멘토링 사업 수퍼바이저 팀장</p>
+            <p class="cred-item">前) 서울대학교 대학생활문화원 자원상담원</p>
+            <p class="cred-item">前) 서울대학교 기숙사 상담실 객원상담원</p>
+            <p class="cred-item">前) 서울대학교 경력개발센터 객원상담원 · 여대생 멘토링 사업 운영담당</p>
+            <p class="cred-item">前) 명지대학교 교육대학원 객원조교수</p>
+            <p class="cred-item">前) 서울사이버대학교 객원교수</p>
+            <p class="cred-item">前) 한국집중력센터 책임연구원</p>
+            <p class="cred-item">前) 가천대학교 사회정책대학원 출강</p>
+            <p class="cred-item">前) 안양대학교 교육대학원 출강</p>
+            <p class="cred-item">前) 서울대학교 과학영재교육원 영재교육전문가</p>
+            <p class="cred-item">前) 분당서울대병원 직원 대상 스트레스 관리 프로그램 운영</p>
+            <p class="cred-item">前) SK이노베이션 직장인 전문위촉상담가</p>
+            <p class="cred-item">前) 신한은행 직원 마음건강 프로그램 — 자녀 성격이해 컨설팅</p>
+            <p class="cred-item">前) 차세대영재기업인 전문위촉상담가</p>
+            <p class="cred-item">前) 보건복지부 직장인 정신건강 증진 프로그램 개발</p>
+            <p class="cred-item">前) 한국교육과정평가원 국가기초학력지원센터 집중 컨설팅</p>
           </li>
+
           <li class="cred-group">
-            <p class="cred-group-label">특강·연수</p>
-            <p class="cred-item">서울·경기·인천 교육청 및 학교 교사 대상 학습·진로상담 연수 다수</p>
-            <p class="cred-item">용인시·의정부교육청 신임교사 연수</p>
+            <p class="cred-group-label">수상 · 자문</p>
+            <p class="cred-item">경인교육대학교 우수강사상 수상</p>
+            <p class="cred-item">서울특별시교육청 학습상담 전문가 코칭위원</p>
+            <p class="cred-item">차의과대학교 상담심리학과·심리학전공 교육과정 자문</p>
+            <p class="cred-item">한국방송통신대학교–한국체육대학교 전문가 인터뷰 — 청소년 직업세계 탐색</p>
+            <p class="cred-item">AI 챗봇 개발 전문가 자문</p>
+          </li>
+
+          <li class="cred-group">
+            <p class="cred-group-label">특강 · 연수</p>
+            <p class="cred-summary-lead">자기주도학습, 집중력, ADHD, 사춘기 뇌 발달, 자녀교육, 진로, 직장인의 자기돌봄을 주제로<br>학교·교육청·대학·병원·기업에서 강의해오고 있습니다.</p>
+
+            <p class="cred-section-head">― 교사 연수</p>
+            <p class="cred-item">고양교육지원청 교사 연수</p>
+            <p class="cred-item">용인교육지원청 신임교사 연수</p>
+            <p class="cred-item">인천시교육청 전문상담인력 다문화상담 역량강화 연수 수퍼바이저</p>
+            <p class="cred-item">인천시교육청 다문화상담사 역량강화 연수</p>
+            <p class="cred-item">인천시교육청 초등진로교사 연수</p>
+            <p class="cred-item">부천 상미초등학교 기초학력향상 교사 연수</p>
+            <p class="cred-item">서울 초중등 진로교육연구회 특강 — 그릿과 진로교육</p>
+            <p class="cred-item">경기도교육청 초등진로전담교사 진로교육 역량강화 연수</p>
+            <p class="cred-item">화창초등학교 전문적학습공동체 특강</p>
+            <p class="cred-item">김포교육지원청 교원 연수 — 특수요인 기초학습 부진아 특성 및 지도방안</p>
+            <p class="cred-item">고양교육지원청 기초학력 한마당 교사 연수</p>
+            <p class="cred-item">의정부교육지원청 기초학력보장 교사 연수</p>
+            <p class="cred-item">의정부교육지원청 신규교사 역량강화 연수</p>
+            <p class="cred-item">강원특별자치도교육청 학습종합클리닉센터 워크숍 특강</p>
+            <p class="cred-item">강원자치도교육청 기초학력 전담교사 집중 연수</p>
+            <p class="cred-item">여주교육지원청 교원 연수 — 학습지원대상학생 상담 코칭</p>
+            <p class="cred-item">전북대학교 혁신교육개발원 학습법 특강</p>
+            <p class="cred-item">제주도 꿈길 반딧불이 전문적학습공동체 특강 — 학급 내 진로학업상담</p>
+            <p class="cred-item">강화Wee센터 연수 — 청소년 대인관계 갈등·연애상담·외모강박</p>
+
+            <p class="cred-section-head">― 자격연수 강사</p>
+            <p class="cred-item">인천광역시교육청 유치원 정교사 1급 자격연수 강사</p>
+            <p class="cred-item">인천광역시교육청 전문상담교사 정교사 1급 자격연수 강사</p>
+            <p class="cred-item">인천광역시교육청 2025 교원연구년 특별연수 집중연수</p>
+            <p class="cred-item">인천시교육청 교원치유센터 찾아가는 교육활동 보호교실 학부모 연수</p>
+            <p class="cred-item">한국교원대학교 KNUE심리상담센터 THC고급과정 특강 — 멘토링 실제의 이해</p>
+            <p class="cred-item">한국교원단체총연합회 온라인 교육과정 전문가 강의 — 공감과 회복</p>
+
+            <p class="cred-section-head">― 학부모 특강</p>
             <p class="cred-item">서울시교육청 산하 초·중등 학부모 특강 다수</p>
-            <p class="cred-item">서울대·조선대·가천대·대구과학기술대 외 다수 대학 특강</p>
-            <p class="cred-item">ADHD·경계선지능·영재·자기주도학습·집중력·사춘기 자녀 주제</p>
+            <p class="cred-item">예봉초등학교 학부모 성교육</p>
+            <p class="cred-item">남양주 월문초등학교 학부모 아카데미 특강</p>
+            <p class="cred-item">양천구 청소년상담복지센터 학부모 특강</p>
+            <p class="cred-item">내손초등학교 학부모 특강 — 진로역량 향상 코칭법</p>
+            <p class="cred-item">의정부교육지원청 학부모 연수</p>
+            <p class="cred-item">미동초등학교 학부모 특강</p>
+            <p class="cred-item">일원초등학교 학부모 특강</p>
+
+            <p class="cred-section-head">― 대학 특강</p>
+            <p class="cred-item">서울대학교 교수학습개발센터 특강 — 자기관리를 위한 그릿 키우기</p>
+            <p class="cred-item">서울대학교 기초교육원 특강 — 자기관리와 그릿</p>
+            <p class="cred-item">서강대학교 교수학습센터 특강 — 자기주도학습 향상을 위한 공부습관</p>
+            <p class="cred-item">한국항공대학교 교수학습센터 특강 — 자기관리능력 증진을 위한 진로설계</p>
+            <p class="cred-item">가천대학교 교수학습센터 특강</p>
+            <p class="cred-item">조선대학교 교수학습센터 특강 · 교수법 특강</p>
+            <p class="cred-item">전북대학교 혁신교육개발원 학습법 특강</p>
+            <p class="cred-item">동서울대학교 교수진 특강 — 행동수정기법을 활용한 진로상담</p>
+            <p class="cred-item">루터대학교 교수법 특강</p>
+            <p class="cred-item">한국방송통신대학교 청소년교육과 역량강화 실습 특강</p>
+            <p class="cred-item">차의과대학교 의학전문대학원 교수개발세미나 — 교수진 대상 특강 · 학생지도 및 면담</p>
+            <p class="cred-item">한국교육과정평가원 학습종합클리닉센터 담당자 워크숍 특강</p>
+
+            <p class="cred-section-head">― 병원 · 기업 · 기관</p>
+            <p class="cred-item">분당서울대병원 재활의학과 직원연수</p>
+            <p class="cred-item">분당서울대병원 임상윤리센터 성격검사 특강</p>
+            <p class="cred-item">분당차병원 간호관리자 대상 특강</p>
+            <p class="cred-item">서울성모병원 중간년차 간호사 특강</p>
+            <p class="cred-item">경기도 소방공무원 심리지원단 워크샵</p>
+            <p class="cred-item">신한은행 직원 마음건강 프로그램 — 자녀 성격이해 컨설팅</p>
           </li>
+
         </ul>
       </div>
     </div>
