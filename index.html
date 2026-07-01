@@ -53,17 +53,6 @@
     gap: 12px;
   }
 
-  .logo-symbol {
-    width: 36px;
-    height: 36px;
-    position: relative;
-  }
-
-  .logo-symbol svg {
-    width: 100%;
-    height: 100%;
-  }
-
   .nav-name {
     font-family: var(--serif);
     font-size: 15px;
@@ -154,10 +143,10 @@
   .hero-sub {
     font-size: 15px;
     color: var(--mid);
-    line-height: 2;
+    line-height: 2.1;
     margin-bottom: 48px;
     word-break: keep-all;
-    max-width: 500px;
+    max-width: 520px;
   }
 
   .hero-cta {
@@ -185,12 +174,6 @@
   .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
 
   /* ── SECTION BASE ── */
-  section {
-    padding: 100px 48px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
   .section-label {
     font-size: 11px;
     letter-spacing: 0.25em;
@@ -220,7 +203,6 @@
   /* ── ABOUT ── */
   #about {
     background: var(--warm-white);
-    max-width: 100%;
     padding: 100px 48px;
   }
 
@@ -242,10 +224,70 @@
     font-weight: 500;
   }
 
+  /* ── CONCERNS (이런 고민으로) ── */
+  #concerns {
+    background: var(--cream);
+    padding: 100px 48px;
+  }
+
+  .concerns-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .concerns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--divider);
+    border: 1px solid var(--divider);
+    margin-top: 40px;
+  }
+
+  .concerns-group {
+    background: var(--cream);
+    padding: 32px 28px;
+  }
+
+  .concerns-group-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .concerns-group-title span {
+    display: block;
+    font-size: 10px;
+    font-family: var(--sans);
+    letter-spacing: 0.15em;
+    color: var(--wood-light);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .concern-item {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    word-break: keep-all;
+  }
+
+  .concern-item:last-child { border-bottom: none; }
+
+  .concern-item::before {
+    content: '· ';
+    color: var(--wood-light);
+  }
+
   /* ── COUNSELING ── */
   #counseling {
-    background: var(--cream);
-    max-width: 100%;
+    background: var(--warm-white);
     padding: 100px 48px;
   }
 
@@ -264,7 +306,7 @@
   }
 
   .program-card {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 36px 32px;
   }
 
@@ -290,10 +332,26 @@
     word-break: keep-all;
   }
 
+  .program-sub-list {
+    margin-top: 10px;
+    list-style: none;
+  }
+
+  .program-sub-list li {
+    font-size: 12px;
+    color: var(--light);
+    padding: 3px 0;
+    line-height: 1.6;
+  }
+
+  .program-sub-list li::before {
+    content: '— ';
+    color: var(--wood-light);
+  }
+
   /* ── DIRECTOR ── */
   #director {
     background: var(--charcoal);
-    max-width: 100%;
     padding: 100px 48px;
     color: white;
   }
@@ -304,14 +362,15 @@
   }
 
   .director-inner .section-label { color: var(--wood-light); }
-
   .director-inner .section-title { color: white; }
 
-  .director-layout {
+  /* 대표 경력 요약 */
+  .director-summary {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
     align-items: start;
+    margin-bottom: 60px;
   }
 
   .director-bio {
@@ -336,13 +395,80 @@
     letter-spacing: 0.1em;
   }
 
-  .credentials {
+  .director-key-creds {
     list-style: none;
+    margin-top: 28px;
   }
 
-  .cred-group {
-    margin-bottom: 32px;
+  .director-key-creds li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    line-height: 1.9;
+    word-break: keep-all;
   }
+
+  .director-key-creds li:last-child { border-bottom: none; }
+
+  .director-key-creds .cred-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--wood-light);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  /* 전체 경력 펼치기 */
+  .expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-family: var(--sans);
+    letter-spacing: 0.05em;
+    padding: 14px 28px;
+    cursor: pointer;
+    background: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .expand-btn:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  .expand-btn .btn-arrow {
+    display: inline-block;
+    transition: transform 0.25s;
+  }
+
+  .expand-btn.open .btn-arrow { transform: rotate(180deg); }
+
+  .director-full {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .director-full.open {
+    max-height: 9999px;
+  }
+
+  .full-creds-inner {
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+  }
+
+  /* 경력 상세 */
+  .credentials { list-style: none; }
+
+  .cred-group { margin-bottom: 36px; }
 
   .cred-group-label {
     font-size: 11px;
@@ -364,12 +490,6 @@
 
   .cred-item:last-child { border-bottom: none; }
 
-  .cred-item.cred-summary {
-    line-height: 1.75;
-    padding: 10px 0;
-    color: rgba(255,255,255,0.55);
-  }
-
   .cred-summary-lead {
     font-size: 13px;
     color: rgba(255,255,255,0.7);
@@ -388,8 +508,6 @@
     font-weight: 400;
   }
 
-
-
   .media-tags {
     display: flex;
     flex-wrap: wrap;
@@ -405,10 +523,95 @@
     letter-spacing: 0.05em;
   }
 
+  /* ── COLUMN PREVIEW (센터장 소개 아래) ── */
+  #column-preview {
+    background: var(--cream);
+    padding: 100px 48px;
+  }
+
+  .column-preview-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .column-preview-list {
+    display: grid;
+    gap: 1px;
+    background: var(--divider);
+    border: 1px solid var(--divider);
+    margin-top: 32px;
+  }
+
+  .column-preview-card {
+    background: var(--cream);
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .column-preview-card:hover { background: #f0ece5; }
+
+  .column-preview-meta {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--wood-light);
+    margin-bottom: 6px;
+  }
+
+  .column-preview-title {
+    font-size: 14px;
+    font-family: var(--serif);
+    color: var(--charcoal);
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  .column-preview-arrow {
+    color: var(--wood-light);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .column-preview-card.latest {
+    background: #f0e9de;
+    border-left: 3px solid var(--wood);
+    padding-left: 25px;
+  }
+
+  .column-preview-card.latest:hover { background: #e8dfd3; }
+
+  .column-preview-card.latest .column-preview-title {
+    font-weight: 500;
+    color: var(--charcoal);
+    font-size: 15px;
+  }
+
+  .column-preview-card.latest .column-preview-meta {
+    color: var(--wood);
+  }
+
+  .more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    color: var(--wood);
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--wood-light);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+
+  .more-btn:hover { color: var(--charcoal); }
+
   /* ── CONTACT ── */
   #contact {
     background: var(--warm-white);
-    max-width: 100%;
     padding: 100px 48px;
   }
 
@@ -424,9 +627,7 @@
     align-items: start;
   }
 
-  .contact-info-item {
-    margin-bottom: 32px;
-  }
+  .contact-info-item { margin-bottom: 32px; }
 
   .contact-info-label {
     font-size: 11px;
@@ -460,55 +661,14 @@
 
   .kakao-btn:hover { opacity: 0.85; }
 
-  .map-placeholder {
-    background: var(--cream);
-    border: 1px solid var(--divider);
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    color: var(--light);
-    font-size: 13px;
-  }
-
-  .map-icon {
-    font-size: 28px;
-    opacity: 0.4;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal);
-    padding: 40px 48px;
-    text-align: center;
-  }
-
-  .footer-logo {
-    font-family: var(--serif);
-    font-size: 16px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-  }
-
-  .footer-info {
-    font-size: 12px;
-    color: rgba(255,255,255,0.25);
-    line-height: 2;
-  }
-
-  /* ── COLUMN ── */
+  /* ── FULL COLUMN (하단) ── */
   #column {
     background: var(--charcoal);
-    max-width: 100%;
     padding: 100px 48px;
   }
 
   #column .section-label { color: var(--wood-light); }
   #column .section-title { color: white; }
-  #column > .column-inner > p { color: rgba(255,255,255,0.55) !important; }
 
   .column-inner {
     max-width: 900px;
@@ -585,13 +745,36 @@
 
   .column-more:hover { color: white; border-color: white; }
 
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .footer-info {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    line-height: 2;
+  }
+
   /* ── MOBILE ── */
   @media (max-width: 720px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .hero { padding: 100px 24px 64px; }
-    section, #about, #counseling, #director, #contact, footer { padding-left: 24px; padding-right: 24px; }
-    .director-layout, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    #about, #concerns, #counseling, #director, #column-preview, #contact, #column, footer { padding-left: 24px; padding-right: 24px; }
+    .director-summary, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .concerns-grid { grid-template-columns: 1fr; }
     .hero::before, .hero::after { display: none; }
   }
 </style>
@@ -605,26 +788,27 @@
     <span class="nav-name">이온심리상담센터</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#about">센터 소개</a></li>
-    <li><a href="#counseling">상담 안내</a></li>
+    <li><a href="#concerns">상담 안내</a></li>
+    <li><a href="#counseling">상담 분야</a></li>
     <li><a href="#director">센터장</a></li>
-    <li><a href="#column">칼럼</a></li>
+    <li><a href="#column-preview">칼럼</a></li>
     <li><a href="#contact">상담 신청</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- 1. HERO — 메인 슬로건 -->
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Aeon Counseling Center</p>
     <h1 class="hero-title">
       아이를 둘러싼<br>
-      <em>모든 어른</em>을 위한<br>
-      심리상담센터
+      <em>모든 어른들의</em><br>
+      상담
     </h1>
     <p class="hero-sub">
-      부모, 교사, 양육자 — 아이 곁의 어른이 단단해질 때 아이도 변합니다.<br>
-      서울대학교 교육학 박사가 직접 상담합니다.
+      아이의 어려움은 아이 혼자의 문제가 아닐 때가 많습니다.<br>
+      자녀, 부모, 교사, 가족의 맥락을 함께 이해하는 상담을 드립니다.<br>
+      아이 곁의 어른이라면 누구든, 그리고 한때는 아이였던 어른도<br>모두 이 곳에서 상담받을 수 있습니다.
     </p>
     <a href="http://pf.kakao.com/_gxdkEX/chat" target="_blank" class="hero-cta">
       카카오톡으로 상담 문의하기
@@ -633,7 +817,7 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- 2. ABOUT — 센터 철학 및 소개 -->
 <div id="about">
   <div class="about-inner">
     <p class="section-label">About</p>
@@ -650,7 +834,56 @@
   </div>
 </div>
 
-<!-- COUNSELING -->
+<!-- 3. CONCERNS — 이런 고민으로 상담을 신청합니다 -->
+<div id="concerns">
+  <div class="concerns-inner">
+    <p class="section-label">Who We Help</p>
+    <h2 class="section-title">이런 고민으로 찾아오십니다</h2>
+    <div class="concerns-grid">
+      <div class="concerns-group">
+        <p class="concerns-group-title">
+          <span>For Parents</span>
+          부모
+        </p>
+        <p class="concern-item">자녀의 ADHD, 학습, 학교생활 때문에 고민하고 있습니다.</p>
+        <p class="concern-item">아이 문제 때문에 제가 먼저 지쳐가고 있습니다.</p>
+        <p class="concern-item">사춘기 자녀와의 관계가 어렵습니다.</p>
+        <p class="concern-item">아이를 어떻게 이해해야 할지 모르겠습니다.</p>
+      </div>
+      <div class="concerns-group">
+        <p class="concerns-group-title">
+          <span>For Teachers</span>
+          교사 및 교육전문가
+        </p>
+        <p class="concern-item">학생 지도와 생활지도로 인해 소진되었습니다.</p>
+        <p class="concern-item">학부모 상담이 너무 어렵습니다.</p>
+        <p class="concern-item">교사로서의 자신감이 떨어졌습니다.</p>
+        <p class="concern-item">번아웃과 무기력을 경험하고 있습니다.</p>
+      </div>
+      <div class="concerns-group">
+        <p class="concerns-group-title">
+          <span>For Adults</span>
+          성인
+        </p>
+        <p class="concern-item">불안과 걱정이 많습니다.</p>
+        <p class="concern-item">인간관계가 반복해서 힘듭니다.</p>
+        <p class="concern-item">진로와 삶의 방향을 고민하고 있습니다.</p>
+        <p class="concern-item">자기 이해와 성장을 원합니다.</p>
+      </div>
+      <div class="concerns-group">
+        <p class="concerns-group-title">
+          <span>For Couples &amp; Families</span>
+          부부 및 가족
+        </p>
+        <p class="concern-item">양육 과정에서 갈등이 반복됩니다.</p>
+        <p class="concern-item">부부 간 의사소통이 어렵습니다.</p>
+        <p class="concern-item">가족 관계 안에서 지치고 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. COUNSELING — 상담 분야 -->
 <div id="counseling">
   <div class="counseling-inner">
     <p class="section-label">Counseling</p>
@@ -659,46 +892,85 @@
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">아동·청소년 상담</h3>
-        <p class="program-desc">ADHD·집중력·경계선 지능, 학습·시험불안, 영재 아동, 또래관계·학교적응, 사춘기·진로 고민</p>
+        <ul class="program-sub-list">
+          <li>ADHD · 집중력 · 경계선 지능</li>
+          <li>학습 및 시험불안</li>
+          <li>영재성과 정서</li>
+          <li>학교 적응 · 또래 관계</li>
+          <li>정서 및 행동 문제</li>
+        </ul>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">부모 상담</h3>
-        <p class="program-desc">양육 방식 점검, 사춘기 자녀와의 갈등, 훈육 방식, 부모-자녀 관계 개선</p>
+        <ul class="program-sub-list">
+          <li>양육 스트레스 · 부모 소진</li>
+          <li>부모 역할 갈등</li>
+          <li>자녀 이해</li>
+          <li>부모의 정서적 어려움</li>
+        </ul>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">부부/커플 상담</h3>
-        <p class="program-desc">갈등 패턴 점검, 소통 방식 개선, 신뢰 회복, 양육관 조율, 관계 만족도 향상</p>
+        <ul class="program-sub-list">
+          <li>갈등 패턴 점검 · 신뢰 회복</li>
+          <li>소통 방식 개선</li>
+          <li>양육관 조율</li>
+          <li>가족 관계 회복</li>
+        </ul>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
-        <h3 class="program-title">성인·교사 상담</h3>
-        <p class="program-desc">직장 스트레스, 관계 어려움, 성인 심리 상담</p>
+        <h3 class="program-title">교사 및 교육전문가 상담</h3>
+        <ul class="program-sub-list">
+          <li>교사 번아웃 · 직업적 소진</li>
+          <li>학생 생활지도</li>
+          <li>학부모 관계</li>
+          <li>교육 현장에서의 심리적 어려움</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">성인 상담</h3>
+        <ul class="program-sub-list">
+          <li>불안 · 정서적 어려움</li>
+          <li>자기 이해 · 자기 성장</li>
+          <li>관계 문제</li>
+          <li>진로 및 삶의 전환기</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"></div>
+        <h3 class="program-title">심리검사</h3>
+        <ul class="program-sub-list">
+          <li>지능검사 (K-WISC · K-WAIS)</li>
+          <li>성격검사 (MBTI · TCI · 성격5요인)</li>
+          <li>MMPI</li>
+          <li>학습유형 · 진로탐색</li>
+          <li>검사 후 해석 상담 포함</li>
+        </ul>
       </div>
       <div class="program-card">
         <div class="program-icon"></div>
         <h3 class="program-title">특강·연수</h3>
         <p class="program-desc">교육청·학교 교사 연수, 학부모 특강, ADHD·경계선 지능·자기주도학습·집중력·진로, 교사·간호사 소진 및 자기돌봄 주제</p>
       </div>
-      <div class="program-card">
-        <div class="program-icon"></div>
-        <h3 class="program-title">심리검사</h3>
-        <p class="program-desc">지능검사(K-WISC·K-WAIS), 성격검사(MBTI·TCI·성격5요인), MMPI, 학습유형·진로탐색 — 검사 후 해석 상담 포함</p>
-      </div>
     </div>
     <p style="margin-top: 24px; font-size: 13px; color: var(--light);">
-      모든 상담은 예약제로 운영됩니다. 카카오톡 채널로 문의 주시면 안내드립니다.
+      상담 비용과 진행 방식은 상담 영역과 필요에 따라 달라질 수 있으며, 자세한 내용은 문의 시 안내드립니다.
     </p>
   </div>
 </div>
 
-<!-- DIRECTOR -->
+<!-- 5. DIRECTOR — 센터장 대표 경력 + 전체 경력 펼치기 -->
 <div id="director">
   <div class="director-inner">
     <p class="section-label">Director</p>
     <h2 class="section-title">센터장 소개</h2>
-    <div class="director-layout">
+
+    <!-- 대표 경력 요약 -->
+    <div class="director-summary">
       <div>
         <p class="director-name">조아라</p>
         <p class="director-title-text">센터장 · 서울대학교 교육학 박사</p>
@@ -708,26 +980,58 @@
           사람은 누구나 삶에서 한 번은 잘 살아보고 싶어지는 때가 온다는 것입니다.<br>
           아이도, 부모도, 교사도, 어른도.<br>
           그 순간에 혼자가 아니길 바라는 마음으로 이 공간을 열었습니다.<br><br>
-          사랑하지 않아서 잘 못하는 게 아닙니다.<br>
-          방법을 몰라서일 때가 더 많습니다.
+          오랫동안 아이와 부모, 교사, 그리고 교육 현장을 연구하고 상담한 경험을 바탕으로, 상담실에서는 개인의 문제뿐 아니라 가족과 학교, 관계의 맥락을 함께 이해하고자 합니다.
         </p>
         <div style="margin-top: 24px;">
           <p class="cred-group-label" style="margin-bottom: 10px;">언론 보도</p>
           <p style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 6px; line-height: 1.8; font-style: italic;">"딴생각을 억제하려 할수록 오히려 더 늘어난다"</p>
-          <p style="font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 14px; line-height: 1.7;">「학습 중 딴생각」 관련 연구 YTN 사이언스 및 주요 언론 보도 (2017)</p>
+          <p style="font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 12px;">— 조선일보·연합뉴스·YTN사이언스·MBC다큐·EBS다큐프라임·KBS (2017, 딴생각 연구)</p>
           <div class="media-tags">
             <span class="media-tag">YTN 사이언스</span>
             <span class="media-tag">조선일보</span>
             <span class="media-tag">연합뉴스</span>
-            <span class="media-tag">서울신문</span>
-            <span class="media-tag">조선에듀</span>
-            <span class="media-tag">MBC 다큐 「두뇌음식」</span>
-            <span class="media-tag">EBS 다큐프라임 「상상력」</span>
-            <span class="media-tag">KBS 과학카페 「최면」</span>
+            <span class="media-tag">MBC 다큐</span>
+            <span class="media-tag">EBS 다큐프라임</span>
+            <span class="media-tag">KBS</span>
           </div>
         </div>
       </div>
+
+      <!-- 대표 경력 키 항목 -->
       <div>
+        <ul class="director-key-creds">
+          <li>
+            <span class="cred-label">학위 및 자격</span>
+            서울대학교 교육학과 교육상담전공 박사<br>
+            서울대학교 교육학과 교육상담전공 석사<br>
+            여성가족부 청소년상담사 1급<br>
+            한국상담학회 전문상담사 2급
+          </li>
+          <li>
+            <span class="cred-label">현재 활동</span>
+            現) 서울교육대학교 · 경인교육대학교 출강<br>
+            現) 차의과대학교 임상상담심리대학원 출강<br>
+            現) 한국방송통신대학교 KNOU PASS 프라임칼리지 교수<br>
+            現) 병원간호사회 감정소진·자기돌봄 연수<br>
+            現) 한국청소년상담복지개발원 청소년상담사 자격연수 강사<br>
+            現) 인천시교육청 교원치유상담사
+          </li>
+          <li>
+            <span class="cred-label">칼럼 연재</span>
+            한국교육신문 「공감 치유 지상상담소」 현재 연재 중
+          </li>
+        </ul>
+
+        <!-- 전체 경력 버튼 — 경력 바로 아래 -->
+        <button class="expand-btn" onclick="this.classList.toggle('open'); document.getElementById('fullCreds').classList.toggle('open')" style="margin-top: 28px; width: 100%; justify-content: center; background: rgba(255,255,255,0.06); border-color: var(--wood-light); color: var(--wood-light); font-size: 14px; letter-spacing: 0.08em;">
+          전체 경력 및 활동 보기 <span class="btn-arrow">﹀</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 전체 경력 상세 -->
+    <div class="director-full" id="fullCreds">
+      <div class="full-creds-inner">
         <ul class="credentials">
 
           <li class="cred-group">
@@ -851,12 +1155,106 @@
   </div>
 </div>
 
-<!-- COLUMN -->
+<!-- 6. COLUMN PREVIEW — 칼럼 미리보기 (센터장 아래) -->
+<div id="column-preview">
+  <div class="column-preview-inner">
+    <p class="section-label">Column</p>
+    <h2 class="section-title">상담 칼럼 및 전문 기고</h2>
+    <p style="font-size: 14px; color: var(--mid); line-height: 1.8; word-break: keep-all; max-width: 560px;">
+      한국교육신문 「공감 치유 지상상담소」를 매달 연재하고 있습니다.<br>
+      교사, 부모, 아이를 둘러싼 관계와 심리를 주제로 씁니다.
+    </p>
+    <div class="column-preview-list">
+      <a href="https://hangyo.com/news/article.html?no=107896" target="_blank" class="column-preview-card latest">
+        <div>
+          <p class="column-preview-meta">⑭ · 2026.06.04 &nbsp;· 최신</p>
+          <p class="column-preview-title">저연차 교사의 삶, 눈치보다 지치겠어요!</p>
+        </div>
+        <span class="column-preview-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=107531" target="_blank" class="column-preview-card">
+        <div>
+          <p class="column-preview-meta">⑬ · 2026.04.30</p>
+          <p class="column-preview-title">한 배를 탄 아이들과의 동행, 문제아는 어떡하죠?</p>
+        </div>
+        <span class="column-preview-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=107276" target="_blank" class="column-preview-card">
+        <div>
+          <p class="column-preview-meta">⑫ · 2026.04.03</p>
+          <p class="column-preview-title">8년간 저학년만 맡았는데, 6학년은 버겁네요</p>
+        </div>
+        <span class="column-preview-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=106412" target="_blank" class="column-preview-card">
+        <div>
+          <p class="column-preview-meta">⑪ · 2026.01.22</p>
+          <p class="column-preview-title">배움이 느린 학생의 모둠 활동, 소외될까 걱정돼요</p>
+        </div>
+        <span class="column-preview-arrow">→</span>
+      </a>
+      <a href="https://hangyo.com/news/article.html?no=106075" target="_blank" class="column-preview-card">
+        <div>
+          <p class="column-preview-meta">⑩ · 2025.12.11</p>
+          <p class="column-preview-title">교사의 지도 방식을 탓하는 학생, 공감이 안 돼요</p>
+        </div>
+        <span class="column-preview-arrow">→</span>
+      </a>
+    </div>
+    <a href="#column" class="more-btn">더 많은 칼럼 보기 →</a>
+  </div>
+</div>
+
+<!-- 7. CONTACT — 상담 문의 -->
+<div id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">상담 신청 및 오시는 길</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">상담 문의</p>
+          <p class="contact-info-value">카카오톡 채널로 문의해 주세요.<br>상담 요청 내용을 남겨주시면<br>순차적으로 안내드립니다.</p>
+          <a href="http://pf.kakao.com/_gxdkEX/chat" target="_blank" class="kakao-btn" style="margin-bottom:12px; display:inline-flex;">
+            💬 카카오톡으로 문의하기
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">운영 안내</p>
+          <p class="contact-info-value">모든 상담은 예약제로 운영됩니다</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">위치</p>
+          <p class="contact-info-value">
+            서울시 관악구 남부순환로 1808<br>
+            관악센추리타워 709호
+          </p>
+        </div>
+        <div style="border: 1px solid var(--divider); height: 260px; overflow: hidden;">
+          <iframe
+            src="https://www.google.com/maps?q=서울시+관악구+남부순환로+1808+관악센추리타워&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. COLUMN — 한국교육신문 칼럼 전체 (하단) -->
 <div id="column">
   <div class="column-inner">
     <p class="section-label">Column</p>
     <h2 class="section-title">한국교육신문 「공감 치유 지상상담소」 연재 중</h2>
-    <p style="font-size: 14px; margin-bottom: 36px; line-height: 1.8; word-break: keep-all;">
+    <p style="font-size: 14px; margin-bottom: 36px; line-height: 1.8; word-break: keep-all; color: rgba(255,255,255,0.55);">
       교사, 부모, 아이를 둘러싼 관계와 심리에 대해 매달 칼럼을 연재하고 있습니다.
     </p>
     <div class="column-list">
@@ -911,55 +1309,8 @@
       </a>
     </div>
     <a href="https://hangyo.com/news/search_result.html?search=지상상담소" target="_blank" class="column-more">
-      한국교육신문에서 더 보기 (전체 13건) →
+      한국교육신문에서 더 보기 (전체 14건) →
     </a>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact">
-  <div class="contact-inner">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">상담 신청 및 오시는 길</h2>
-    <div class="divider"></div>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-info-item">
-          <p class="contact-info-label">상담 문의</p>
-          <p class="contact-info-value">카카오톡 채널 또는 문자로 문의해 주세요.<br>상담 요청 내용을 남겨주시면<br>순차적으로 안내드립니다.</p>
-          <a href="http://pf.kakao.com/_gxdkEX/chat" target="_blank" class="kakao-btn" style="margin-bottom:12px; display:inline-flex;">
-            💬 카카오톡으로 문의하기
-          </a><br>
-          <a href="sms:01072701008" class="kakao-btn" style="background:#2C2C2C; color:white; margin-top:4px; display:inline-flex;">
-            📱 문자로 문의하기 &nbsp;<span style="opacity:0.6; font-size:12px;">010-7270-1008</span>
-          </a>
-        </div>
-        <div class="contact-info-item">
-          <p class="contact-info-label">운영 안내</p>
-          <p class="contact-info-value">모든 상담은 예약제로 운영됩니다</p>
-        </div>
-      </div>
-      <div>
-        <div class="contact-info-item">
-          <p class="contact-info-label">위치</p>
-          <p class="contact-info-value">
-            서울시 관악구 남부순환로 1808<br>
-            관악센추리타워 709호
-          </p>
-        </div>
-        <div style="border: 1px solid var(--divider); height: 260px; overflow: hidden;">
-          <iframe
-            src="https://www.google.com/maps?q=서울시+관악구+남부순환로+1808+관악센추리타워&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
