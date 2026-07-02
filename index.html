@@ -83,6 +83,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 120px 48px 80px;
     background: var(--cream);
     position: relative;
@@ -217,6 +218,7 @@
     line-height: 2.2;
     word-break: keep-all;
     max-width: 640px;
+    margin: 0 auto;
   }
 
   .about-text strong {
@@ -767,6 +769,14 @@
     line-height: 2;
   }
 
+  /* ── DESKTOP LEGIBILITY (분야별 상세설명 폰트 컬러 보정) ── */
+  @media (min-width: 721px) {
+    .concern-item,
+    .program-desc {
+      color: #565656;
+    }
+  }
+
   /* ── MOBILE ── */
   @media (max-width: 720px) {
     nav { padding: 16px 24px; }
@@ -1005,13 +1015,14 @@
             서울대학교 교육학과 교육상담전공 박사<br>
             서울대학교 교육학과 교육상담전공 석사<br>
             여성가족부 청소년상담사 1급<br>
-            한국상담학회 전문상담사 2급
+            한국상담학회 전문상담사 2급<br>
+            DBT Foundation 수료
           </li>
           <li>
             <span class="cred-label">현재 활동</span>
-            現) 서울교육대학교 · 경인교육대학교 출강<br>
+            現) 서울교육대학교 출강<br>
+            現) 경인교육대학교 출강<br>
             現) 차의과대학교 임상상담심리대학원 출강<br>
-            現) 한국방송통신대학교 KNOU PASS 프라임칼리지 교수<br>
             現) 병원간호사회 감정소진·자기돌봄 연수<br>
             現) 한국청소년상담복지개발원 청소년상담사 자격연수 강사<br>
             現) 인천시교육청 교원치유상담사
@@ -1035,27 +1046,8 @@
         <ul class="credentials">
 
           <li class="cred-group">
-            <p class="cred-group-label">학위 및 자격</p>
-            <p class="cred-item">서울대학교 교육학과 교육상담전공 박사</p>
-            <p class="cred-item">서울대학교 교육학과 교육상담전공 석사</p>
-            <p class="cred-item">여성가족부 청소년상담사 1급</p>
-            <p class="cred-item">한국상담학회 전문상담사 2급</p>
-            <p class="cred-item">DBT Foundation 수료</p>
-          </li>
-
-          <li class="cred-group">
-            <p class="cred-group-label">現) 현재 활동</p>
-            <p class="cred-item">現) 서울교육대학교 · 경인교육대학교 출강</p>
-            <p class="cred-item">現) 한국방송통신대학교 청소년교육과 출강</p>
-            <p class="cred-item">現) 한국방송통신대학교 KNOU PASS 프라임칼리지 교수</p>
-            <p class="cred-item">現) 차의과대학교 임상상담심리대학원 출강</p>
-            <p class="cred-item">現) 병원간호사회 감정소진·자기돌봄 연수</p>
-            <p class="cred-item">現) 한국청소년상담복지개발원 청소년상담사 자격연수 강사</p>
-            <p class="cred-item">現) 인천시교육청 교원치유상담사</p>
-          </li>
-
-          <li class="cred-group">
             <p class="cred-group-label">前) 주요 경력</p>
+            <p class="cred-item">現) 한국방송통신대학교 KNOU PASS 과정 강사</p>
             <p class="cred-item">前) 교육인적자원부·서울대학교 멘토링 사업 수퍼바이저 팀장</p>
             <p class="cred-item">前) 서울대학교 대학생활문화원 자원상담원</p>
             <p class="cred-item">前) 서울대학교 기숙사 상담실 객원상담원</p>
